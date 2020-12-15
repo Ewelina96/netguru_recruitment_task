@@ -33,8 +33,10 @@ dependencies:
   cupertino_icons: ^1.0.0
 
 dev_dependencies:
+  flutter_native_splash: ^0.1.9  
   flutter_test:
     sdk: flutter
+  
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -67,10 +69,14 @@ flutter:
       - family: ArchitectsDaughter-Regular
         fonts:
           - asset: assets/fonts/ArchitectsDaughter-Regular.ttf   
-
       - family: Roboto
         fonts:
           - asset: assets/fonts/Roboto.ttf
+
+
+flutter_native_splash:
+  image: assets/images/splash.png
+  color: "d0d1d2"      
             #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
