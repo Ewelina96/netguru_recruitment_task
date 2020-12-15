@@ -5,14 +5,14 @@ import 'package:recruitment_task/consts/values.dart';
 import 'package:recruitment_task/pages/favorites_page.dart';
 import 'package:recruitment_task/pages/user_values_page.dart';
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key}) : super(key: key);
+class MainPage extends StatefulWidget {
+  MainPage({Key key}) : super(key: key);
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MainPageState createState() => _MainPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MainPageState extends State<MainPage> {
   ValuesBLoC _valuesBLoC = ValuesBLoC();
   @override
   void initState() {
@@ -21,7 +21,11 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget _buttonIconWithText(
-      BuildContext context, IconData icon, String label, Function onTap) {
+    BuildContext context,
+    IconData icon,
+    String label,
+    Function onTap,
+  ) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -150,12 +154,6 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            StreamBuilder(
-                stream: _valuesBLoC.favoriteList,
-                builder:
-                    (BuildContext context, AsyncSnapshot sentenceSnapshot) {
-                  return Container();
-                }),
             Padding(
               padding: EdgeInsets.all(16),
               child: Align(

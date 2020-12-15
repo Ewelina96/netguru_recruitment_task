@@ -58,6 +58,7 @@ class ValuesBLoC {
     String userValues = prefs.getString('userValues');
     List<String> userValuesList =
         userValues == null ? [] : List<String>.from(jsonDecode(userValues));
+
     userValuesList.add(newValue);
     _userValues.add(userValuesList);
     prefs.setString(
@@ -80,6 +81,8 @@ class ValuesBLoC {
     List<String> userFavoritesList = userFavorites == null
         ? []
         : List<String>.from(jsonDecode(userFavorites));
+    if (userFavoritesList.indexWhere((element) => element == newFavorite) != -1)
+      return;
     userFavoritesList.add(newFavorite);
     _userFavorites.add(userFavoritesList);
     prefs.setString(
